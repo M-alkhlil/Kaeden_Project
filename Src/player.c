@@ -1,6 +1,6 @@
 #include "player.h"
 
-void Player_Init(Player* player) {
+void Player_Init(Player* player ,float startX, float startY) {
 
 	player -> frames[0] = CP_Image_Load("Assets/00_Walk.png");
 	player -> frames[1] = CP_Image_Load("Assets/01_Walk.png");
@@ -11,8 +11,8 @@ void Player_Init(Player* player) {
 	player -> frames[6] = CP_Image_Load("Assets/06_Walk.png");
 	player -> frames[7] = CP_Image_Load("Assets/07_Walk.png");
 
-	player -> x = SCREEN_WIDTH / 2.0f - 1065 / 2.0f;
-	player -> y = SCREEN_HEIGHT - 600 - 5;
+	player -> x = startX;
+	player -> y = startY;
 	player -> frameTimer = 0.0f;
 	player -> currentFrame = 0;
 	player -> isMovingRight = 0;
@@ -57,12 +57,18 @@ void Player_Update(Player* player, float deltaTime) {
 	else {
 		player -> currentFrame = 0;
 	}
+	/*m.alkhlil */
+	// Define the ground level where the player should land.
+// Set the ground level to match the background's floor position
 
-	if (player -> y >= SCREEN_HEIGHT - 600 - 5) {
-		player -> y = SCREEN_HEIGHT - 600 - 5;
-		player -> velocityY = 0.0f;
-		player -> isJumping = 0;
+	/*m.alkhlil */
+	// Ensure the player doesn't fall below the ground level
+	if (player->y >= groundLevel) {
+		player->y = groundLevel;
+		player->velocityY = 0.0f;
+		player->isJumping = 0;
 	}
+
 
 }
 

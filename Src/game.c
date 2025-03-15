@@ -25,21 +25,30 @@ void InitializeGame(void) {
 
 	CP_Sound_PlayAdvanced(overworld, 0.3, 1, 1, CP_SOUND_GROUP_0);
 
-	Player_Init(&player);
+	/*m.alkhlil */
+	// Initialize the player at (100, groundLevel) to start on the ground and avoid unnecessary falling
+
+	Player_Init(&player,100,groundLevel);
 
 	InitializeLevel();
 }
 
 void UpdateGame(void) {
-	CP_Graphics_ClearBackground(CP_Color_Create(0, 0, 0, 255));
 
+	/*m.alkhlil */
+
+	CP_Graphics_ClearBackground(CP_Color_Create(0, 0, 0, 255));
+	// Draw the background image centered on the screen
 	CP_Image_Draw(background, SCREEN_WIDTH / 2.0f, SCREEN_HEIGHT / 2.0, SCREEN_WIDTH, SCREEN_HEIGHT, 255);
+	// Draw the level before drawing the player
+	DrawLevel();
 
 	float deltaTime = CP_System_GetDt();
 	Player_Update(&player, deltaTime);
+	// Draw the player on top of the level
 	Player_Draw(&player);
 
-	DrawLevel();
+	
 }
 
 void ExitGame(void) {
