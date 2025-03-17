@@ -82,6 +82,10 @@ void UpdateFountainAnimation(void) {
 }
 
 void DrawLevel(void) {
+    /*m.alkhlil*/
+        // Update the fountain animation
+    UpdateFountainAnimation();
+
     // First pass: Draw background elements (ground, tiles, fences, etc.)
     for (int row = 0; row < GRID_ROWS; row++) {
         for (int col = 0; col < GRID_COLS; col++) {
@@ -135,8 +139,7 @@ void DrawLevel(void) {
 
 void MainGameLoop(void) {
     CP_Graphics_ClearBackground(CP_Color_Create(0, 0, 0, 255)); 
-    UpdateFountainAnimation();
-    DrawLevel();
+     DrawLevel();
 }
 
 void Level_Exit(void) {
