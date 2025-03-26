@@ -16,6 +16,9 @@
     <ClCompile Include="Src\level.c">
       <Filter>Src</Filter>
     </ClCompile>
+    <ClCompile Include="Src\cJSON.c">
+      <Filter>Src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Inc\game.h">
@@ -33,6 +36,9 @@
     <ClInclude Include="Inc\level.h">
       <Filter>Inc</Filter>
     </ClInclude>
+    <ClInclude Include="Inc\cJSON.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Inc">
@@ -41,5 +47,10 @@
     <Filter Include="Src">
       <UniqueIdentifier>{e69b8f8e-e71c-44fe-9bc7-f66542d474f3}</UniqueIdentifier>
     </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\map.json">
+      <Filter>Src</Filter>
+    </None>
   </ItemGroup>
 </Project>

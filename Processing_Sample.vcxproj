@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Src\cJSON.c" />
     <ClCompile Include="Src\game.c" />
     <ClCompile Include="Src\level.c" />
     <ClCompile Include="Src\main.c" />
@@ -26,11 +27,15 @@
     <ClCompile Include="Src\player.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Inc\cJSON.h" />
     <ClInclude Include="Inc\game.h" />
     <ClInclude Include="Inc\level.h" />
     <ClInclude Include="Inc\mainmenu.h" />
     <ClInclude Include="Inc\player.h" />
     <ClInclude Include="Inc\splashscreen.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\map.json" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
